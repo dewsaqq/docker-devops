@@ -1,0 +1,10 @@
+sudo: required
+ 
+services: 
+  - docker
+ 
+before_install:
+  - docker build -t dewsaqq/myreactapp -f 02-react-app/Dockerfile.dev 02-react-app/.
+ 
+script:
+  - docker run -e CI=true dewsaqq/myreactapp yarn test
