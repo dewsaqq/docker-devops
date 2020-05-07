@@ -1,10 +1,12 @@
+const keys = require('./keys');
+
 const { v4: uuidv4 } = require('uuid');
 const express = require('express');
 const app = express();
 const redis = require('redis');
 const redisClient = redis.createClient({
-  host: "myredisservice",
-  port: 6379,
+  host: keys.redisHost,
+  port: keys.redisPort,
   retry_strategy: () => 1000
 });
  
