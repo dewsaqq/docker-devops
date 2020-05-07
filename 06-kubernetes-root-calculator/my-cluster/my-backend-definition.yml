@@ -17,6 +17,11 @@ spec:
       containers:
       - name: mybackend-container
         image: dewsaqq/mybackend
+        env:
+        - name: REDIS_HOST
+          value: my-redis-service
+        - name: REDIS_PORT
+          value: '6379'
   replicas: 3
   selector:
     matchLabels:
