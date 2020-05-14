@@ -6,9 +6,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - targetPort: 5000
-    port: 80
-    nodePort: 30009
+    - targetPort: 5000
+      port: 80
+      nodePort: 30009
   selector:
     app: myapp-backend
     type: backend

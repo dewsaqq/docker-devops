@@ -13,8 +13,10 @@ const redisClient = redis.createClient({
 const appId = uuidv4();
 const appPort = 5000;
  
+console.log(keys);
+
 app.get('/', (req, res) => {
-  res.send(`[${appId}] Hello from backend app`);
+  res.send(`[${appId}] ${keys.initMessage}`);
 });
  
 app.listen(appPort, err => {
