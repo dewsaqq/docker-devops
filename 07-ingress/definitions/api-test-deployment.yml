@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: api-test-deployment
+  labels:
+    app: my-api
+    type: test-backend
+
+spec:
+  template:
+    metadata:
+      name: my-api-pod
+      labels:
+        app: my-api
+        type: test-backend
+    spec:
+      containers:
+        - name: my-backend-container
+          image: dewsaqq/api-test
+  replicas: 3
+  selector:
+    matchLabels:
+      type: test-backend
