@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: frontend-deployment
+  labels:
+    app: myapp-frontend
+    type: frontend
+spec:
+  minReadySeconds: 5
+  template:
+    metadata:
+      name: frontend-pod
+      labels:
+        app: myapp-frontend
+        type: frontend
+    spec:
+      containers:
+        - name: frontend-container
+          image: dewsaqq/root-frontend
+          stdin: true
+  replicas: 1
+  selector:
+    matchLabels:
+      type: frontend

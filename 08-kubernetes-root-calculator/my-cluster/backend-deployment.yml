@@ -28,7 +28,7 @@ spec:
                 name: postgres-config
             - configMapRef:
                 name: redis-config
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       type: backend
